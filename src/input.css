@@ -163,8 +163,8 @@
 
 .services .services__wrapper .services__card 
 {
-    @apply shadow-2xl rounded-md 
-
+    @apply shadow-2xl rounded-md transition-all
+    hover:scale-75 translate-x-6 md:transform-none 
 
 }
 
@@ -172,6 +172,8 @@
 .services__text
 {
     @apply p-7 md:px-[2rem] md:py-[5rem]
+    ease-in transition-all
+    
 }
 .services .services__wrapper .services__card 
 .services__text h4
