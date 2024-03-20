@@ -31,7 +31,7 @@
     .branding .header__navd li a
     {
         @apply font-medium text-sm text-light hover:text-berde
-        md:text-[1.7rem];
+        md:text-[1.2rem];
     }
 
     .header__action
@@ -151,7 +151,9 @@
 
 .services .services__wrapper .services__card 
 {
-    @apply shadow-2xl rounded-md
+    @apply shadow-2xl rounded-md 
+
+
 }
 
 .services .services__wrapper .services__card .services__text
@@ -202,7 +204,9 @@
 }
 .room__card
 {
-    @apply bg-[#30322f] bg-opacity-75 py-[4rem] px-[2rem] text-light mx-10
+    @apply bg-[#30322f] bg-opacity-75 py-[4rem] px-[2rem] 
+    md:mx-[10rem]
+    text-light mx-10
 }
 
 .room__card h1
@@ -223,10 +227,14 @@
     @apply pt-[3rem] pb-[2rem]
 }
 
+.contact .contact__wrapper 
+{
+    @apply md:flex md:flex-row-reverse md:justify-between md:max-w-[100%] md:gap-0
+}
 .contact .contact__wrapper .contact__info ul li
 {
     @apply flex flex-row gap-4 justify-start items-start 
-    pt-[1rem] px-[.4rem]
+    pt-[1rem] px-[.4rem] 
 }
 
 .contact .contact__wrapper .contact__form form
@@ -242,7 +250,7 @@
 .contact .contact__wrapper .contact__form form input, textarea
 {
     @apply border-[.1rem] border-black 
-    rounded-md py-[.7rem] px-[1rem]
+    rounded-md py-[.7rem] px-[1rem] 
 }
 
 
@@ -255,14 +263,32 @@
 
 .footer .footer__wrapper
 {
-    @apply grid grid-cols-1 place-items-center gap-5 text-light;
+    @apply grid grid-cols-1 place-items-center gap-5 text-light
+          md:grid md:grid-cols-3;
 }
+
+.footer__image
+{
+   @apply md:order-2
+}
+
+.footer__copy
+{
+   @apply md:order-3
+}
+
+.footer__social
+{
+   @apply md:order-1
+}
+
+
+
+
 .footer .footer__wrapper ul
 {
     @apply flex flex-row gap-3
 }
-
-
 
 @layer utilities
 {
@@ -281,6 +307,7 @@
         
         hover:bg-[#c03b2e]
         hover:text-light
+        md:text-[1.3rem]
 ; 
     }
 

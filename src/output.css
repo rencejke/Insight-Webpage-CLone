@@ -630,7 +630,7 @@ video {
 
 @media (min-width: 768px) {
   .branding .header__navd li a {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -844,6 +844,12 @@ video {
   background-color: rgb(192 59 46 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .btnSquare {
+    font-size: 1.3rem;
+  }
 }
 
 .btnRound {
@@ -1134,6 +1140,13 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+  .room__card {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
 .room__card h1 {
   padding-bottom: 1.25rem;
   text-align: center;
@@ -1151,6 +1164,16 @@ video {
 .contact .contact__wrapper .contact__info ul {
   padding-top: 3rem;
   padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .contact .contact__wrapper {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 0px;
+  }
 }
 
 .contact .contact__wrapper .contact__info ul li {
@@ -1203,6 +1226,25 @@ video {
   gap: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .footer .footer__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer__image {
+    order: 2;
+  }
+
+  .footer__copy {
+    order: 3;
+  }
+
+  .footer__social {
+    order: 1;
+  }
 }
 
 .footer .footer__wrapper ul {
