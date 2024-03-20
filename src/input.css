@@ -163,8 +163,8 @@
 
 .services .services__wrapper .services__card 
 {
-    @apply shadow-2xl rounded-md transition-all
-    hover:scale-75 translate-x-6 md:transform-none 
+    @apply shadow-2xl rounded-md md:transition-all md:ease
+    hover:scale-75 md:translate-x-6 md:transform 
 
 }
 
