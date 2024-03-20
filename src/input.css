@@ -20,12 +20,12 @@
     }
     .branding img
     {
-        @apply w-[6rem] md:w-[12rem];
+        @apply w-[6rem] md:w-[7rem];
     }
 
     .branding .header__navd
     {
-        @apply hidden md:flex gap-10;
+        @apply hidden md:flex gap-10 ;
     }
 
     .branding .header__navd li a
@@ -36,15 +36,22 @@
 
     .header__action
     {
-        @apply md:hidden absolute top-0 right-0 w-[0] h-[100vh] 
-        px-0 pt-0 overflow-hidden transition-all 
-        shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+        @apply md:hidden absolute top-0 right-0 
+        w-[0] h-[100vh] px-0 pt-0 
+        overflow-hidden transition-all 
+        shadow-md md:static md:h-fit md:w-fit 
+        md:shadow-none;
 
     }
     .header__action.open
     {
         @apply w-[100%] px-[10rem] pt-[10rem] transition-all
          bg-black 
+    }
+
+    .header__wrapper
+    {
+        @apply md:flex md:justify-between
     }
 
     .header__action .header__navm
@@ -82,12 +89,13 @@
 
     .burger__menu span
     {
-        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all
+        @apply w-[1.5rem]  h-[.2rem]
+         bg-light block rounded-full transition-all;
     }
 
     .burger__menu span:nth-child(2)
     {
-        @apply my-1
+        @apply my-1 
     }
 
     .header__wrapper
@@ -98,24 +106,27 @@
 
     .burger__menu.open span:first-child
     {
-        @apply transform translate-y-[8px] rotate-[225deg] transition-all 
+        @apply transform translate-y-[8px] rotate-[225deg] 
+        transition-all;
 
        
     }
 
     .burger__menu.open span:nth-child(2)
     {
-        @apply opacity-0 transition-all
+        @apply opacity-0 transition-all;
     }
 
     .burger__menu.open span:last-child
     {
-        @apply transform translate-y-[-7px] rotate-[-225deg] transition-all
+        @apply transform translate-y-[-7px] 
+        rotate-[-225deg] transition-all;
     }
 }
 .wrapper
 {
- @apply bg-HeroBanner min-h-[55vh] md:min-h-[100vh] bg-no-repeat bg-cover bg-center;
+ @apply bg-HeroBanner min-h-[70vh] 
+ md:min-h-[100vh] bg-no-repeat bg-cover bg-center;
 }
 .banner
 {
@@ -134,7 +145,8 @@
 
 .banner__btn
 {
-    @apply flex flex-col md:flex-row gap-[1.6rem] pt-8 md:pt-14 md:justify-center
+    @apply flex flex-col md:flex-row 
+    gap-[1.6rem] pt-8 md:pt-14 md:justify-center
 }
 
 /* services */
@@ -156,26 +168,31 @@
 
 }
 
-.services .services__wrapper .services__card .services__text
+.services .services__wrapper .services__card 
+.services__text
 {
     @apply p-7 md:px-[2rem] md:py-[5rem]
 }
-.services .services__wrapper .services__card .services__text h4
+.services .services__wrapper .services__card 
+.services__text h4
 {
-    @apply text-center text-[1.4rem] md:text-[3rem] font-bold pb-4
+    @apply text-center text-[1.4rem] 
+    md:text-[3rem] font-semibold pb-4
 }
-.services .services__wrapper .services__card .services__text p
+.services .services__wrapper .services__card 
+.services__text p
 {
     @apply text-justify pb-4 md:text-[1.3rem] 
 }
 
-
-.services .services__wrapper .services__text ul 
+.services .services__wrapper 
+.services__text ul 
 {
     @apply md:flex flex-col gap-[1rem] md:gap-[1rem] 
 }
 
-.services .services__wrapper .services__text ul li 
+.services .services__wrapper 
+.services__text ul li 
 {
     @apply text-[1rem] md:text-[1.3rem]
 }
@@ -194,19 +211,22 @@
 }
 .room__design
 {
-    @apply bg-roomDesign1 min-h-[50vh] bg-no-repeat bg-cover 
+    @apply bg-roomDesign1 min-h-[50vh] 
+    bg-no-repeat bg-cover 
     bg-center;
 }
 
 .room__design
 {
-    @apply flex flex-col justify-center items-center text-center 
+    @apply flex flex-col justify-center 
+    items-center text-center hover:bg-gray-600
 }
 .room__card
 {
     @apply bg-[#30322f] bg-opacity-75 py-[4rem] px-[2rem] 
-    md:mx-[10rem]
-    text-light mx-10
+    md:mx-[5rem] mx-[3rem] text-light 
+    /* ease-in transition-all
+    scale-75 translate-x-4 skew-y-3 md:transform-none */
 }
 
 .room__card h1
@@ -224,27 +244,31 @@
 
 .contact .contact__wrapper .contact__info ul 
 {
-    @apply pt-[3rem] pb-[2rem]
+    @apply pt-[3rem] md:pt-0 pb-[2rem]
 }
 
 .contact .contact__wrapper 
 {
-    @apply md:flex md:flex-row-reverse md:justify-between md:max-w-[100%] md:gap-0
+    @apply md:inline-flex md:flex-row-reverse 
+    md:justify-center md:max-w-[100%] md:gap-[5rem] 
 }
 .contact .contact__wrapper .contact__info ul li
 {
-    @apply flex flex-row gap-4 justify-start items-start 
-    pt-[1rem] px-[.4rem] 
+    @apply flex flex-row gap-4 justify-start 
+    md:items-start pt-[1rem] px-[.4rem] 
+}
+
+.contact .contact__wrapper .contact__info ul li i
+{
+    @apply text-[#fc4d3c]
 }
 
 .contact .contact__wrapper .contact__form form
 {
-    @apply flex flex-col gap-4 
-}
+    @apply flex flex-col gap-4  
+    shadow-2xl px-[1rem] py-[1rem] 
+    rounded-2xl md:w-[30rem]
 
-.contact .contact__wrapper .contact__form form
-{
-    @apply shadow-2xl px-[1rem] py-[1rem] rounded-2xl
 }
 
 .contact .contact__wrapper .contact__form form input, textarea
@@ -253,52 +277,57 @@
     rounded-md py-[.7rem] px-[1rem] 
 }
 
+.contact .contact__wrapper .contact__form form textarea
+{
+    @apply resize-none
+}
+.contact .contact__wrapper .contact__form form a
+{
+    @apply self-end;
+}
 
 /* footer */
 
 .footer
 {
-    @apply bg-[#575757];
+    @apply bg-[#575757] py-10 relative;
 }
 
 .footer .footer__wrapper
 {
-    @apply grid grid-cols-1 place-items-center gap-5 text-light
-          md:grid md:grid-cols-3;
+    @apply grid grid-cols-1 place-items-center 
+    gap-5 text-light
+    md:grid md:grid-cols-3;
 }
-
-.footer__image
-{
-   @apply md:order-2
-}
-
-.footer__copy
-{
-   @apply md:order-3
-}
-
-.footer__social
-{
-   @apply md:order-1
-}
-
-
 
 
 .footer .footer__wrapper ul
 {
-    @apply flex flex-row gap-3
+    @apply flex flex-row gap-[2rem]
 }
+
+.footer .footer__wrapper ul li a
+{
+    @apply text-[1.5rem]
+}
+
+.footer__item:nth-child(1) { @apply md:order-2; }
+.footer__item:nth-child(2) { @apply md:order-1; }
+.footer__item:nth-child(3) { @apply order-3; }
+
+
+
 
 @layer utilities
 {
     .btn 
     {
         @apply  border-light border-[.1rem] text-light rounded-full
-        px-[1rem] py-[1rem]  hover:bg-light hover:text-[#fc4d3c]
+        px-[1rem] py-[1rem] 
+       hover:bg-light 
+       hover:text-[#fc4d3c]
         text-[1.3rem]
-        md:w-[20%;]
-        ;  
+        md:w-[20%];  
     }
     .btnSquare
     {
@@ -314,7 +343,8 @@
     .btnRound
     {
         @apply bg-[#c03b2e] text-light 
-        w-[33%] text-center px-2 py-2 text-[.9rem] ; 
+        w-[33%] text-center px-2 py-2 md:py-3 md:px-[.5rem] text-[.9rem]
+         md:rounded-3xl; 
     }
 
     .btnRound2

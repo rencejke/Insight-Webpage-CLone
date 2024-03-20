@@ -600,7 +600,7 @@ video {
 
 @media (min-width: 768px) {
   .branding img {
-    width: 12rem;
+    width: 7rem;
   }
 }
 
@@ -676,6 +676,13 @@ video {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 768px) {
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .header__action .header__navm {
@@ -797,6 +804,14 @@ video {
   transition-duration: 150ms;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .btn {
   border-radius: 9999px;
   border-width: .1rem;
@@ -820,7 +835,7 @@ video {
 
 @media (min-width: 768px) {
   .btn {
-    width: 20%;;
+    width: 20%;
   }
 }
 
@@ -864,6 +879,16 @@ video {
   font-size: .9rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .btnRound {
+    border-radius: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
 }
 
 .btnRound2 {
@@ -950,7 +975,7 @@ video {
 }
 
 .wrapper {
-  min-height: 55vh;
+  min-height: 70vh;
   background-image: url(../dist/img/banner-img.png);
   background-size: cover;
   background-position: center;
@@ -1034,12 +1059,14 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.services .services__wrapper .services__card .services__text {
+.services .services__wrapper .services__card 
+.services__text {
   padding: 1.75rem;
 }
 
 @media (min-width: 768px) {
-  .services .services__wrapper .services__card .services__text {
+  .services .services__wrapper .services__card 
+.services__text {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 5rem;
@@ -1047,48 +1074,56 @@ video {
   }
 }
 
-.services .services__wrapper .services__card .services__text h4 {
+.services .services__wrapper .services__card 
+.services__text h4 {
   padding-bottom: 1rem;
   text-align: center;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
-  .services .services__wrapper .services__card .services__text h4 {
+  .services .services__wrapper .services__card 
+.services__text h4 {
     font-size: 3rem;
   }
 }
 
-.services .services__wrapper .services__card .services__text p {
+.services .services__wrapper .services__card 
+.services__text p {
   padding-bottom: 1rem;
   text-align: justify;
 }
 
 @media (min-width: 768px) {
-  .services .services__wrapper .services__card .services__text p {
+  .services .services__wrapper .services__card 
+.services__text p {
     font-size: 1.3rem;
   }
 }
 
-.services .services__wrapper .services__text ul {
+.services .services__wrapper 
+.services__text ul {
   flex-direction: column;
   gap: 1rem;
 }
 
 @media (min-width: 768px) {
-  .services .services__wrapper .services__text ul {
+  .services .services__wrapper 
+.services__text ul {
     display: flex;
     gap: 1rem;
   }
 }
 
-.services .services__wrapper .services__text ul li {
+.services .services__wrapper 
+.services__text ul li {
   font-size: 1rem;
 }
 
 @media (min-width: 768px) {
-  .services .services__wrapper .services__text ul li {
+  .services .services__wrapper 
+.services__text ul li {
     font-size: 1.3rem;
   }
 }
@@ -1127,9 +1162,14 @@ video {
   text-align: center;
 }
 
+.room__design:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .room__card {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   background-color: rgb(48 50 47 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.75;
   padding-top: 4rem;
@@ -1142,8 +1182,8 @@ video {
 
 @media (min-width: 768px) {
   .room__card {
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 
@@ -1167,24 +1207,38 @@ video {
 }
 
 @media (min-width: 768px) {
+  .contact .contact__wrapper .contact__info ul {
+    padding-top: 0px;
+  }
+
   .contact .contact__wrapper {
-    display: flex;
+    display: inline-flex;
     max-width: 100%;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 0px;
+    justify-content: center;
+    gap: 5rem;
   }
 }
 
 .contact .contact__wrapper .contact__info ul li {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
   padding-left: .4rem;
   padding-right: .4rem;
   padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contact .contact__wrapper .contact__info ul li {
+    align-items: flex-start;
+  }
+}
+
+.contact .contact__wrapper .contact__info ul li i {
+  --tw-text-opacity: 1;
+  color: rgb(252 77 60 / var(--tw-text-opacity));
 }
 
 .contact .contact__wrapper .contact__form form {
@@ -1201,6 +1255,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (min-width: 768px) {
+  .contact .contact__wrapper .contact__form form {
+    width: 30rem;
+  }
+}
+
 .contact .contact__wrapper .contact__form form input, textarea {
   border-radius: 0.375rem;
   border-width: .1rem;
@@ -1212,11 +1272,22 @@ video {
   padding-right: 1rem;
 }
 
+.contact .contact__wrapper .contact__form form textarea {
+  resize: none;
+}
+
+.contact .contact__wrapper .contact__form form a {
+  align-self: flex-end;
+}
+
 /* footer */
 
 .footer {
+  position: relative;
   --tw-bg-opacity: 1;
   background-color: rgb(87 87 87 / var(--tw-bg-opacity));
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .footer .footer__wrapper {
@@ -1233,22 +1304,28 @@ video {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  .footer__image {
-    order: 2;
-  }
-
-  .footer__copy {
-    order: 3;
-  }
-
-  .footer__social {
-    order: 1;
-  }
 }
 
 .footer .footer__wrapper ul {
   display: flex;
   flex-direction: row;
-  gap: 0.75rem;
+  gap: 2rem;
+}
+
+.footer .footer__wrapper ul li a {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer__item:nth-child(1) {
+    order: 2;
+  }
+
+  .footer__item:nth-child(2) {
+    order: 1;
+  }
+}
+
+.footer__item:nth-child(3) {
+  order: 3;
 }
