@@ -20,7 +20,7 @@
     }
     .branding img
     {
-        @apply w-14;
+        @apply w-[6rem] md:w-[12rem];
     }
 
     .branding .header__navd
@@ -30,12 +30,13 @@
 
     .branding .header__navd li a
     {
-        @apply font-medium text-sm text-light hover:text-berde;
+        @apply font-medium text-sm text-light hover:text-berde
+        md:text-[1.7rem];
     }
 
     .header__action
     {
-        @apply bg-white absolute top-[6.2rem] right-0 w-[0] h-[90vh] 
+        @apply md:hidden absolute top-0 right-0 w-[0] h-[100vh] 
         px-0 pt-0 overflow-hidden transition-all 
         shadow-md md:static md:h-fit md:w-fit md:shadow-none;
 
@@ -54,29 +55,26 @@
 
     .header__action .header__navm li:hover a
     {
-        @apply text-berde;
+        @apply text-light;
     }
     .header__action .header__navm li a
     {
-        @apply font-medium text-[1.7rem] text-light;
-    }
-
-    .header__action .header__socials a
-    {
-       @apply flex gap-[1rem] items-center hover:text-berde
-       text-[1.5rem] text-light
+        @apply font-medium text-[1.7rem] text-light ease-in-out duration-100 delay-150
+         hover:bg-white opacity-100 hover:px-[3rem] hover:py-[.5rem] hover:delay-300 hover:bg-opacity-25 ;
     }
 
     .header__action .header__socials
     {
-        @apply pt-5 flex flex-col gap-3 
+        @apply pt-4 flex flex-col gap-[3rem] 
         md:flex-row-reverse md:p-2;
     }
+    
     .header__action .header__kamote
     {
-        @apply flex gap-4 text-black pb-10 text-center items-center
+        @apply flex gap-8 text-[1.3rem] text-light 
+        pb-10 text-center items-center 
+      
     }
-
     .burger__menu
     {
         @apply md:hidden;
@@ -84,7 +82,7 @@
 
     .burger__menu span
     {
-        @apply w-[1.5rem] h-[.2rem] bg-gray-700 block rounded-full transition-all
+        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all
     }
 
     .burger__menu span:nth-child(2)
@@ -101,6 +99,7 @@
     .burger__menu.open span:first-child
     {
         @apply transform translate-y-[8px] rotate-[225deg] transition-all 
+
        
     }
 
@@ -116,7 +115,7 @@
 }
 .wrapper
 {
- @apply bg-HeroBanner min-h-[55vh] bg-no-repeat bg-cover bg-center;
+ @apply bg-HeroBanner min-h-[55vh] md:min-h-[100vh] bg-no-repeat bg-cover bg-center;
 }
 .banner
 {
@@ -124,48 +123,67 @@
 }
 .banner__wrapper
 {
-    @apply text-center ; 
+    @apply text-center md:pt-[5rem]; 
 }
 
 .banner__text h1
 {
-    @apply text-[2rem] text-light font-semibold;
+    @apply text-[2rem] text-light font-semibold 
+    md:text-[5rem];
 }
 
 .banner__btn
 {
-    @apply flex flex-col gap-[1.6rem] pt-8
+    @apply flex flex-col md:flex-row gap-[1.6rem] pt-8 md:pt-14 md:justify-center
 }
 
 /* services */
 
 .services
 {
-    @apply max-w-[90rem]
+    /* @apply max-w-[90rem]  */
+    @apply: md:mb-[6rem]
+}
+.services .services__wrapper
+{
+    @apply md:grid md:grid-cols-3 gap-5 md:place-items-center
 }
 
 .services .services__wrapper .services__card 
 {
     @apply shadow-2xl rounded-md
 }
+
 .services .services__wrapper .services__card .services__text
 {
-    @apply p-7
+    @apply p-7 md:px-[2rem] md:py-[5rem]
 }
 .services .services__wrapper .services__card .services__text h4
 {
-    @apply text-center text-[1.2rem] font-bold pb-4
+    @apply text-center text-[1.4rem] md:text-[3rem] font-bold pb-4
 }
 .services .services__wrapper .services__card .services__text p
 {
-    @apply text-justify pb-4
+    @apply text-justify pb-4 md:text-[1.3rem] 
 }
-.services .services__wrapper .services__card .services__btn
+
+
+.services .services__wrapper .services__text ul 
 {
-    @apply mb-[3rem];
-} 
+    @apply md:flex flex-col gap-[1rem] md:gap-[1rem] 
+}
+
+.services .services__wrapper .services__text ul li 
+{
+    @apply text-[1rem] md:text-[1.3rem]
+}
 
 /* room */
+
+.room
+{
+    @apply md:mt-[5rem]
+}
 
 .room__wrapper
 {
@@ -251,12 +269,19 @@
     .btn 
     {
         @apply  border-light border-[.1rem] text-light rounded-full
-        px-[1rem] py-[1rem] ; 
+        px-[1rem] py-[1rem]  hover:bg-light hover:text-[#fc4d3c]
+        text-[1.3rem]
+        md:w-[20%;]
+        ;  
     }
     .btnSquare
     {
-        @apply block bg-[#c03b2e] border-light border-[.1rem] text-light 
-        px-12 py-4 w-[100%] text-center; 
+        @apply block border-t-[#c03b2e] border-[.1rem] text-black 
+        px-12 py-4 w-[100%] text-center       
+        
+        hover:bg-[#c03b2e]
+        hover:text-light
+; 
     }
 
     .btnRound
@@ -265,19 +290,29 @@
         w-[33%] text-center px-2 py-2 text-[.9rem] ; 
     }
 
+    .btnRound2
+    {
+        @apply block bg-[#c03b2e] text-light rounded-full
+        px-12 py-4 w-[100%] text-center  hover:bg-light hover:text-[#fc4d3c]
+        text-[1.3rem] md:w-[20%]; 
+    }
+
+
     .btnMd
     {
         @apply bg-[#fc4d3c] text-light rounded-md
-        px-[1rem] py-[.6rem]; 
+        px-[1rem] py-[.6rem] hover:bg-light hover:text-[#fc4d3c]; 
     }
+    
 
     .blockHeader h3
     {
-        @apply text-[#fc4d3c] font-bold text-[2rem]
-        text-center;
+        @apply text-[#fc4d3c] font-bold text-[2rem] md:text-[4rem]
+        text-center md:text-left;
     }
     .blockHeader p
     {
-        @apply text-center;
+        @apply text-center md:text-[1.3rem]
+        md:text-left md:pb-7;
     }
 }
