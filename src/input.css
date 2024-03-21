@@ -14,33 +14,30 @@
     {
         @apply  text-light
     }
-    .branding
-    {
-        @apply md:flex items-center gap-12
-    }
     .branding img
     {
-        @apply w-[6rem] md:w-[7rem];
+        @apply w-[6rem] md:w-[7rem] pt-1;
     }
 
-    .branding .header__navd
+    .header__socials .header__navd
     {
-        @apply hidden md:flex gap-10 ;
+        @apply hidden md:flex ;
     }
 
-    .branding .header__navd li a
+    .header__socials .header__navd li a
     {
-        @apply font-medium text-sm text-light hover:text-berde
-        md:text-[1.2rem];
+        @apply font-medium text-sm text-light 
+        hover:bg-white hover:bg-opacity-60 hover:text-[#fc4d3c] px-3 py-4 transition-all
+        md:text-[1.2rem] md:mx-[1rem] md:items-center md:justify-center p-12; 
     }
 
     .header__action
     {
-        @apply md:hidden absolute top-0 right-0 
+        @apply absolute top-0 right-0 
         w-[0] h-[100vh] px-0 pt-0 
         overflow-hidden transition-all 
         shadow-md md:static md:h-fit md:w-fit 
-        md:shadow-none;
+        md:shadow-none
 
     }
     .header__action.open
@@ -66,23 +63,32 @@
     }
     .header__action .header__navm li a
     {
-        @apply font-medium text-[1.7rem] text-light ease-in-out duration-100 delay-150
-         hover:bg-white opacity-100 hover:px-[3rem] hover:py-[.5rem] hover:delay-300 hover:bg-opacity-25 ;
+        @apply font-medium text-[1.7rem] text-light ease-in-out 
+        duration-100 delay-150
+         hover:bg-white opacity-100 hover:px-[3rem] 
+         hover:py-[.5rem] hover:delay-300 hover:bg-opacity-25 ;
     }
 
-    .header__action .header__socials
+    .header__action .header__socials ul li a
     {
-        @apply pt-4 flex flex-col gap-[3rem] 
+        @apply pt-4 flex flex-col gap-12
         md:flex-row-reverse md:p-2;
     }
     
+
     .header__action .header__kamote
     {
-        @apply flex gap-8 text-[1.3rem] text-light 
-        pb-10 text-center items-center 
-      
+        @apply md:hidden flex flex-row  text-[1.3rem] text-light 
+        pb-10 text-center items-center justify-center gap-20
+        
     }
-    .burger__menu
+    .header__action .header__kamote li
+    {
+        @apply hover:bg-white  hover:px-1
+
+    }
+
+        .burger__menu
     {
         @apply md:hidden;
     }
@@ -128,10 +134,7 @@
  @apply bg-HeroBanner min-h-[70vh] 
  md:min-h-[100vh] bg-no-repeat bg-cover bg-center;
 }
-.banner
-{
-    /* position: relative; */
-}
+
 .banner__wrapper
 {
     @apply text-center md:pt-[5rem]; 
@@ -163,7 +166,7 @@
 
 .services .services__wrapper .services__card 
 {
-    @apply shadow-2xl rounded-md md:transition-all md:ease
+    @apply shadow-2xl rounded-md md:transition-all md:ease-in
     hover:scale-75 md:translate-x-6 md:transform 
 
 }
@@ -206,30 +209,69 @@
     @apply md:mt-[5rem]
 }
 
+.room__design
+{
+    @apply relative 
+}
+
 .room__wrapper
 {
     @apply grid grid-cols-1 gap-4
-    md:grid-cols-3 md:gap-0;
+    md:grid-cols-3 md:gap-0; 
 }
 .room__design
 {
-    @apply bg-roomDesign1 min-h-[50vh] 
+    @apply min-h-[50vh] 
     bg-no-repeat bg-cover 
-    bg-center;
+    bg-center flex flex-col justify-center 
+    items-center text-center relative;
+}
+.room__design:first-child
+{
+    @apply bg-roomDesign1 
+     
 }
 
-.room__design
+.room__design:nth-child(2)
 {
-    @apply flex flex-col justify-center 
-    items-center text-center hover:bg-gray-600
+    @apply bg-roomDesign2
+}
+
+.room__design:last-child
+{
+    @apply bg-roomDesign3
 }
 .room__card
 {
-    @apply bg-[#30322f] bg-opacity-75 py-[4rem] px-[2rem] 
+    @apply bg-black bg-opacity-75 py-[4rem] px-[2rem] 
     md:mx-[5rem] mx-[3rem] text-light 
-    /* ease-in transition-all
-    scale-75 translate-x-4 skew-y-3 md:transform-none */
+    ease-in transition-all md:transform-none
 }
+
+
+.room__card::after{
+    @apply 
+    md:absolute 
+    md:bg-black
+    md:top-0 
+    md:left-0
+    md:content-['']
+    md:w-full 
+    md:h-full
+    md:bg-opacity-60
+    md:ease-in
+}
+.room__card:hover::after{
+    @apply md:scale-0;
+}
+.room__card{
+    @apply md:opacity-0
+    md:hover:opacity-100
+    md:transition-all
+    md:duration-700 
+   
+}
+
 
 .room__card h1
 {
@@ -240,6 +282,8 @@
 {
     @apply pb-9 text-justify text-[.8rem] ;
 }
+
+
 
 
 /* contact */
@@ -253,6 +297,7 @@
 {
     @apply md:inline-flex md:flex-row-reverse 
     md:justify-center md:max-w-[100%] md:gap-[5rem] 
+    
 }
 .contact .contact__wrapper .contact__info ul li
 {
@@ -268,9 +313,10 @@
 .contact .contact__wrapper .contact__form form
 {
     @apply flex flex-col gap-4  
-    shadow-2xl px-[1rem] py-[1rem] 
+    px-[1rem] py-[1rem] 
     rounded-2xl md:w-[30rem]
-
+    md:my-[-5rem]
+    md:bg-white
 }
 
 .contact .contact__wrapper .contact__form form input, textarea
@@ -292,7 +338,7 @@
 
 .footer
 {
-    @apply bg-[#575757] py-10 relative;
+    @apply bg-[#575757] py-10;
 }
 
 .footer .footer__wrapper
@@ -320,6 +366,28 @@
 
 
 
+  .content {
+    @apply p-[16px];
+  }
+  
+  .sticky {
+    @apply 
+    fixed
+    top-0
+    w-[100%]
+    z-[50]
+    bg-black;   
+  }
+  
+  .sticky + .content {
+    @apply 
+    pt-[102px]
+  }
+
+
+
+
+
 @layer utilities
 {
     .btn 
@@ -338,6 +406,8 @@
         
         hover:bg-[#c03b2e]
         hover:text-light
+        transition-all
+        duration-150
         md:text-[1.3rem]
 ; 
     }
@@ -345,8 +415,15 @@
     .btnRound
     {
         @apply bg-[#c03b2e] text-light 
-        w-[33%] text-center px-2 py-2 md:py-3 md:px-[.5rem] text-[.9rem]
-         md:rounded-3xl; 
+        w-[33%] text-center px-3 py-2 md:py-3
+         md:px-[.5rem] md:text-[.9rem] 
+         text-[.7rem] font-semibold
+         rounded-3xl
+        hover:bg-light
+          hover:border-2
+          hover:border-[#c03b2e]
+          hover:text-[#c03b2e]
+         ; 
     }
 
     .btnRound2
